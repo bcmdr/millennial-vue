@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Are They A Millennial?</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script defer src="app.js"></script>
+    
+</head>
+<body>
+<main>
+<section>
+<div id="vue">
+    <form v-on:submit.prevent="onSubmit" autocomplete="off">
+        <label for="inputName"><h1>Are they a millennial?</h1></label>
+        <div class="input-wrapper">
+        <input id="inputName" v-model="inputName" placeholder="Ellie Kemper"/>
+        <button type="submit">Search</button>
+        </div>
+    </form>
+    <div class="result" v-cloak>
+        <p class="is-millennial" v-if="result">{{result}}</p>
+        <p class="birthday" v-if="birthday">Birthday: {{birthday}}</p>
+        <p class="age-description" v-if="result">Millennials are born <a href="https://en.wikipedia.org/wiki/Millennials#Date_and_age_range_definitions">between 1981 and 1996.</a></p>
+    </div>
+</div>
+</section>
+</main>
+</body>
+</html>
+
+
+
